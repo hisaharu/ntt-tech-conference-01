@@ -6,16 +6,22 @@ html lang="ja"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
     meta http-equiv="x-ua-compatible" content="ie=edge"
+    meta property="og:title" content="NTT Tech Conference #1"
+    meta property="og:description" content="NTT Tech Conferenceは、NTTグループのソフトウェアエンジニアたちが一堂に会し、NTTグループ内外のエンジニアたちと技術交流を行うためのカンファレンスです。"
+    meta property="og:url" content="https://ntt-developers.github.io/ntt-tech-conference-01/"
+    meta property="og:image" content="https://ntt-developers.github.io/ntt-tech-conference-01/images/ntt-tech-logo.png"
+
 
     link href="./assets/stylesheets/bower_components.min.css" rel="stylesheet"
     link href="./assets/stylesheets/application.min.css" rel="stylesheet"
+    link rel="icon" type="image/png" href="./images/favicon.png"
 
   body
-    .bd-masthead style="background-image: url(./assets/images/graphy.png);"
+    .bd-masthead style="background-image: url(./images/graphy.png);"
       .container
         .row.justify-content-md-center
           .col.col-md-6
-            img.img-fluid src="./assets/images/ntt-tech-logo.png" alt="ntt-tech-logo.png"
+            img.img-fluid src="./images/ntt-tech-logo.png" alt="ntt-tech-logo.png"
 
     .container
       .text-center.my-5
@@ -26,8 +32,7 @@ html lang="ja"
         .col.col-md-8
           p.description.text-justify.mb-0
             | NTT Tech Conferenceは、NTTグループのソフトウェアエンジニアたちが一堂に会し、NTTグループ内外のエンジニアたちと技術交流を行うためのカンファレンスです。
-            | NTTグループ内には各種OSSのコミッタ、メンテナ、コントリビュータをはじめとしたソフトウェアエンジニアや、各社の様々な案件でシステム開発を行うエンジニアがおり、
-            | それらのエンジニアがもつノウハウや悩みをNTTグループ内外のエンジニアと共有・議論することでもっとおもしろいエンジニアになることを目的としたイベントです。
+            | NTTグループ内には各種OSSのコミッタ、メンテナ、コントリビュータをはじめとしたソフトウェアエンジニアや、各社の様々な案件でシステム開発を行うエンジニアがおり、本イベントではそれらのエンジニアがもつノウハウや悩みをNTTグループ内外のエンジニアと共有・議論することで、参加者がもっとおもしろいエンジニアになることを目的としています。
 
       .separator.mb-5
 
@@ -37,15 +42,15 @@ html lang="ja"
 
       ul.nav.nav-tabs
         li.nav-item
-          a.nav-link.active data-toggle="tab" href="#timetable" role="tab" タイムテーブル
+          a.nav-link.active#ttable data-toggle="tab" href="#timetable" role="tab" タイムテーブル
         li.nav-item
-          a.nav-link data-toggle="tab" href="#room301" role="tab" 301大会議室
+          a.nav-link#r301 data-toggle="tab" href="#room301" role="tab" 301大会議室
         li.nav-item
-          a.nav-link data-toggle="tab" href="#room302" role="tab" 302会議室
+          a.nav-link#r302 data-toggle="tab" href="#room302" role="tab" 302会議室
         li.nav-item
-          a.nav-link data-toggle="tab" href="#room401" role="tab" 401ホール
+          a.nav-link#r401 data-toggle="tab" href="#room401" role="tab" 401ホール
         li.nav-item
-          a.nav-link data-toggle="tab" href="#showcase" role="tab" 展示(401ホール)
+          a.nav-link#demo data-toggle="tab" href="#showcase" role="tab" 展示(401ホール)
 
       .tab-content.mb-5
         include timetable.slim
@@ -67,9 +72,55 @@ html lang="ja"
             a.mx-05 href="https://connpass.com/event/48115/" target="_blank" connpass
             | よりお申し込みください。
             br
+            br
+
+        .col.col-md-8
+          p.description.text-justify.mb-0
+            | 現在、本イベントサイトをGitHub上で作成しておりますが、本サイトに対するPRがマージされた方に向けて新しく
+            | connpass上にContributor枠を作成しました。応募条件は以下の通りです。
+            br
+            br
+              | 1. 応募は
+              a.mx-05 href="https://github.com/ntt-developers/ntt-tech-conference-01" GitHubのレポジトリ
+              | へのPRがマージされたヒトに限ります
+              br
+              | 2. マージには
+              a.mx-05 href="https://github.com/orgs/ntt-developers/people" NTT Developers
+              | に所属する２人以上のLGTMが必要
+              br
+              | 3. 軽微な修正PR（ex. typo fix）もお待ちしておりますが、こちらは応募対象外となります。
+            br
+
+        .col.col-md-8
+          p.description.text-justify.mb-0
             | NTTグループの方は、別のイベント管理ページにて受付をしております。
             | 詳しくは
             a.mx-05 href="https://connpass.com/event/48115/inquiry/" target="_blank" イベントへの問い合わせ
+            | 、もしくは
+            a.mx-05 href="https://twitter.com/mahito" target="_blank" @Mahito
+            | へダイレクトメッセージを飛ばしていただければ対応させていただきます。
+
+      .separator.mb-5
+
+      .text-center.mb-5
+        h4.title 懇親会
+        span.subtitle AFTER PARTY
+
+      .row.justify-content-md-center.mb-5
+        .col.col-md-8
+          p.description.text-justify.mb-0
+            | イベントの登壇者および参加者のみなさまが交流できる場として、
+            | NTTグループの人もグループ外の人もみんなでワイワイ飲んでしゃべりましょう。
+            | 現在参加人数調整中のため、お店の詳細や金額は未定とさせていただいておりますが、
+            | 3000円程度を見積もって調整を行っております。 また詳細が決まりましたら改めてご連絡差し上げます。
+            br
+            | 一般の方は
+            a.mx-05 href="https://connpass.com/event/48110/" target="_blank" connpass
+            | よりお申し込みください。
+            br
+            | NTTグループの方は、別のイベント管理ページにて受付をしております。
+            | 詳しくは
+            a.mx-05 href="https://connpass.com/event/48110/inquiry/" target="_blank" イベントへの問い合わせ
             | 、もしくは
             a.mx-05 href="https://twitter.com/mahito" target="_blank" @Mahito
             | へダイレクトメッセージを飛ばしていただければ対応させていただきます。
@@ -87,10 +138,11 @@ html lang="ja"
             a.mx-05 href="http://www.granpark.jp/access/" target="_blank" アクセス
             | をご覧ください。
 
-    .bd-footer style="background-image: url(./assets/images/graphy.png);"
+    .bd-footer style="background-image: url(./images/graphy.png);"
       .container
         | Copyright
         i.fa.fa-copyright.mx-05
         | 2017 NTT Developers All Rights Reserved.
 
     script src="./assets/javascripts/bower_components.min.js" type="text/javascript"
+    script src="./assets/javascripts/application.min.js" type="text/javascript"
